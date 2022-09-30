@@ -6,12 +6,12 @@ public class Invert {
 	public static int Inversion(int A[], int n) {
 		int count = 0;//도치인 경우 수를 세는 변수
 		
-		for(int i = 0; i < n; i++) {
-			for(int j = 0; j < n; j++) {
-				if(i < j) {// i의 값이 j보다 작을때
-					if(A[i] > A[j]) //A[i] 값이 A[j]값보다 크면 도치
+		for(int i = 0; i < n-1; i++) {
+			for(int j = i+1; j < n; j++) {			
+					if(A[i] > A[j]) { //A[i] 값이 A[j]값보다 크면 도치
 						count++;
-				}
+						System.out.println(A[i] +" > " +A[j]);
+					}
 			}
 		}
 		return count;//count 반환
